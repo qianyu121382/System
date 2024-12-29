@@ -1,0 +1,110 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.VirtualGameMapper">
+
+    <select id="selectAll" resultType="com.example.entity.VirtualGame">
+        select virtualGame.*, virtualGame_shop.name as shopName, virtualGame_type.name as typeName from `virtualGame`
+        left join virtualGame_shop on virtualGame.shop_id = virtualGame_shop.id
+        left join virtualGame_type on virtualGame.type_id = virtualGame_type.id
+        <where>
+            <if test="name != null"> and virtualGame.name like concat('%', #{name}, '%')</if>
+            <if test="shopId != null"> and virtualGame.shop_id = #{shopId}</if>
+            <if test="recommend != null"> and virtualGame.recommend = #{recommend}</if>
+            <if test="status != null"> and virtualGame.status = #{status}</if>
+            <if test="typeId != null"> and virtualGame.type_id = #{typeId}</if>
+        </where>
+        order by virtualGame.id desc
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.VirtualGame">
+        select virtualGame.*, virtualGame_shop.name as shopName, virtualGame_shop.avatar as shopAvatar, virtualGame_type.name as typeName from `virtualGame`
+        left join virtualGame_shop on virtualGame.shop_id = virtualGame_shop.id
+        left join virtualGame_type on virtualGame.type_id = virtualGame_type.id
+        where virtualGame.id = #{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from `virtualGame`
+        where id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.example.entity.VirtualGame" useGeneratedKeys="true">
+        insert into `virtualGame`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="shopId != null">shop_id,</if>
+            <if test="typeId != null">type_id,</if>
+            <if test="name != null">name,</if>
+            <if test="sex != null">sex,</if>
+            <if test="img != null">img,</if>
+            <if test="price != null">price,</if>
+            <if test="introduce != null">introduce,</if>
+            <if test="content != null">content,</if>
+            <if test="status != null">status,</if>
+            <if test="recommend != null">recommend,</if>
+            <if test="store != null">store,</if>
+        </trim>
+            values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="shopId != null">#{shopId},</if>
+            <if test="typeId != null">#{typeId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="img != null">#{img},</if>
+            <if test="price != null">#{price},</if>
+            <if test="introduce != null">#{introduce},</if>
+            <if test="content != null">#{content},</if>
+            <if test="status != null">#{status},</if>
+            <if test="recommend != null">#{recommend},</if>
+            <if test="store != null">#{store},</if>
+        </trim>
+
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.VirtualGame">
+        update `virtualGame`
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="shopId != null">
+                shop_id = #{shopId},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="img != null">
+                img = #{img},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="recommend != null">
+                recommend = #{recommend},
+            </if>
+            <if test="store != null">
+                store = #{store},
+            </if>
+        </set>
+        where id = #{id}
+
+    </update>
+
+</mapper>
