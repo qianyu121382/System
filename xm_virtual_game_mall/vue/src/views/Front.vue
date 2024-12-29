@@ -3,17 +3,17 @@
     <div class="front-header">
       <div class="front-header-left" @click="router.push('/front/home')">
         <img src="@/assets/imgs/logo.png" alt="">
-        <div class="title">宠物商城</div>
+        <div class="title">游戏商城</div>
       </div>
       <div class="front-header-center">
         <el-menu :default-active="router.currentRoute.value.path" router mode="horizontal">
           <el-menu-item index="/front/home">首页</el-menu-item>
-          <el-menu-item index="/front/virtualGameShop">宠物店</el-menu-item>
-          <el-menu-item index="/front/virtualGame">宠物信息</el-menu-item>
-          <el-menu-item index="/front/goods">宠物用品</el-menu-item>
+          <el-menu-item index="/front/virtual_gameShop">游戏店</el-menu-item>
+          <el-menu-item index="/front/virtual_game">游戏信息</el-menu-item>
+          <el-menu-item index="/front/goods">游戏用品</el-menu-item>
           <el-menu-item index="/front/cart">购物车</el-menu-item>
           <el-menu-item index="/front/orders">我的订单</el-menu-item>
-          <el-menu-item index="/front/forum">宠物论坛</el-menu-item>
+          <el-menu-item index="/front/forum">游戏论坛</el-menu-item>
         </el-menu>
       </div>
       <div class="front-header-right">

@@ -24,7 +24,12 @@ public class FileController {
 
     private static final Logger log = LoggerFactory.getLogger(FileController.class);
 
-    private static final String filePath = System.getProperty("user.dir") + "/files/";
+    private static final String filePath = System.getProperty("user.dir") + "/xm_virtual/game/files/";
+    static
+    {
+        System.out.println("---------------");
+        System.out.println(filePath);
+    }
 
     @Value("${fileBaseUrl:}")
     private String fileBaseUrl;

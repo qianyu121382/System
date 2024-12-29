@@ -1,7 +1,7 @@
 <template>
   <div style="width: 60%; margin: 10px auto; min-height: 50vh">
     <div style="margin-bottom: 20px">
-      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入宠物店名称搜索"></el-input>
+      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入游戏店名称搜索"></el-input>
       <el-button size="large" type="primary" @click="load">搜索</el-button>
       <el-button size="large" @click="reset">重置</el-button>
     </div>
@@ -11,7 +11,7 @@
           <img :src="item.avatar" alt="" style="width: 100px; height: 100px">
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around">
             <div style="font-size: 20px; font-weight: bold">{{ item.name }}</div>
-            <div style="margin: 10px 0"><span style="color: #666">售卖宠物：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
+            <div style="margin: 10px 0"><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
             <div><span style="color: #666">店铺地址：</span>{{ item.address }}</div>
           </div>
         </div>

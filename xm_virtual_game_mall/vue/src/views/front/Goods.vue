@@ -1,10 +1,10 @@
 <template>
   <div style="width: 60%; margin: 10px auto;">
     <div style="margin-bottom: 20px">
-      <el-select v-model="data.typeId" placeholder="请选择宠物用品分类" size="large" style="width: 200px; margin-right: 10px">
+      <el-select v-model="data.typeId" placeholder="请选择游戏用品分类" size="large" style="width: 200px; margin-right: 10px">
         <el-option v-for="item in data.typeList" :key="item.id" :label="item.name" :value="item.id"></el-option>
       </el-select>
-      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入宠物用品名称搜索"></el-input>
+      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入游戏用品名称搜索"></el-input>
       <el-button size="large" type="primary" @click="load">搜索</el-button>
       <el-button size="large" @click="reset">重置</el-button>
     </div>
@@ -40,7 +40,7 @@
       <el-pagination @current-change="load" layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="宠物用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
       <div style="padding: 20px; color: #333">
         <div style="text-align: center; margin-bottom: 10px"><img style="width: 50%" :src="data.goods.img" alt=""></div>
         <div style="display: flex; align-items: center; margin-bottom: 10px">

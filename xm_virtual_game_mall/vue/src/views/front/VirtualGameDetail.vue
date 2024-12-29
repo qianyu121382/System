@@ -5,26 +5,26 @@
       <div style="flex: 1; width: 0; display: flex; flex-direction: column; justify-content: space-around">
         <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px">{{ data.virtualGame.name }}</div>
         <div style="margin-bottom: 10px; display: flex; align-items: center;">
-          <span style="color: #666">宠物店：</span>
+          <span style="color: #666">游戏店：</span>
           <div style="display: flex; align-items: center; cursor: pointer;" @click="router.push('/front/virtual_gameShopDetail?id=' + data.virtualGame.shopId)">
             <img style="width: 20px; height: 20px; border-radius: 50%" :src="data.virtualGame.shopAvatar" alt="">
             <span>{{ data.virtualGame.shopName }}</span>
           </div>
         </div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">宠物类型：</span>
+          <span style="color: #666">游戏类型：</span>
           <span>{{ data.virtualGame.typeName }}</span>
         </div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">宠物状态：</span>
+          <span style="color: #666">游戏状态：</span>
           <el-tag type="success">售卖中</el-tag>
         </div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">宠物性别：</span>
+          <span style="color: #666">游戏性别：</span>
           <span>{{ data.virtualGame.sex }}</span>
         </div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">宠物价格：</span>
+          <span style="color: #666">游戏价格：</span>
           <span style="color: red; font-size: 20px">￥{{ data.virtualGame.price }}</span>
         </div>
         <div style="margin-bottom: 10px">
@@ -32,7 +32,7 @@
           <span>{{ data.virtualGame.store }}</span>
         </div>
         <div class="line3" style="text-align: justify; line-height: 20px; height: 60px; margin-bottom: 10px">
-          <span style="color: #666">宠物简介：</span>
+          <span style="color: #666">游戏简介：</span>
           <el-tooltip effect="dark myTooltip" :content="data.virtualGame.introduce" placement="top" v-if="data.virtualGame.introduce?.length >= 114">
             <span>{{ data.virtualGame.introduce }}</span>
           </el-tooltip>
@@ -42,7 +42,7 @@
         <div style="display: flex; grid-gap: 20px">
           <div>
             <el-button type="warning" v-if="data.virtualGame.hasCollect" @click="addCollect(data.virtualGame.id)">取消收藏</el-button>
-            <el-button type="warning" v-else @click="addCollect(data.virtualGame.id)">收藏宠物</el-button>
+            <el-button type="warning" v-else @click="addCollect(data.virtualGame.id)">收藏游戏</el-button>
           </div>
           <el-button type="danger" @click="handleAdd" :disabled="data.virtualGame.store < 1">立即购买</el-button>
         </div>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="card" style="padding: 20px">
-      <div style="font-size: 24px; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #ddd">宠物详情</div>
+      <div style="font-size: 24px; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #ddd">游戏详情</div>
       <div style="padding: 20px 0" v-html="data.virtualGame.content"></div>
     </div>
 

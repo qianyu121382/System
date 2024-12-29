@@ -11,8 +11,8 @@
     <div style="margin: 30px 0; display: flex; grid-gap: 20px">
       <div style="flex: 1">
         <div style="display: flex; align-items: center; margin-bottom: 20px">
-          <div style="flex: 1; font-size: 24px; font-weight: bold">推荐宠物</div>
-          <div style="cursor: pointer" @click="goTo('/front/virtual_game')">查看所有宠物 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
+          <div style="flex: 1; font-size: 24px; font-weight: bold">推荐游戏</div>
+          <div style="cursor: pointer" @click="goTo('/front/virtual_game')">查看所有游戏 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
         </div>
         <div>
           <el-row :gutter="20">
@@ -31,8 +31,8 @@
       </div>
       <div style="flex: 1">
         <div style="display: flex; align-items: center; margin-bottom: 20px">
-          <div style="flex: 1; font-size: 24px; font-weight: bold">热门宠物店</div>
-          <div style="cursor: pointer" @click="goTo('/front/virtualGameShop')">查看所有宠物店 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
+          <div style="flex: 1; font-size: 24px; font-weight: bold">热门游戏店</div>
+          <div style="cursor: pointer" @click="goTo('/front/virtualGameShop')">查看所有游戏店 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
         </div>
         <div class="card" style="padding: 10px">
           <div @click="goTo('/front/virtual_gameShopDetail?id=' + item.id)" class="virtualGameShop-item" v-for="item in data.virtual_gameShopList" :key="item.id" style="display: flex; align-items: center; grid-gap: 40px;
@@ -42,8 +42,8 @@
               <div style="font-size: 16px" class="line1">{{ item.name }}</div>
             </div>
             <div>
-              <div style="margin-bottom: 20px"><span style="color: #666">宠物店地址：</span>{{ item.address }}</div>
-              <div><span style="color: #666">售卖宠物：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
+              <div style="margin-bottom: 20px"><span style="color: #666">游戏店地址：</span>{{ item.address }}</div>
+              <div><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
             </div>
           </div>
         </div>
@@ -52,8 +52,8 @@
 
     <div style="margin: 20px 0">
       <div style="display: flex; align-items: center; margin-bottom: 20px">
-        <div style="flex: 1; font-size: 24px; font-weight: bold">热销宠物用品</div>
-        <div style="cursor: pointer" @click="goTo('/front/goods')">查看所有宠物用品 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
+        <div style="flex: 1; font-size: 24px; font-weight: bold">热销游戏用品</div>
+        <div style="cursor: pointer" @click="goTo('/front/goods')">查看所有游戏用品 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
       </div>
       <el-row :gutter="20">
        <el-col :span="6" v-for="item in data.goodsList" :key="item.id">
@@ -80,7 +80,7 @@
       </el-row>
     </div>
 
-    <el-dialog title="宠物用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
       <div style="padding: 20px; color: #333">
         <div style="text-align: center; margin-bottom: 10px"><img style="width: 50%" :src="data.goods.img" alt=""></div>
         <div style="display: flex; align-items: center; margin-bottom: 10px">

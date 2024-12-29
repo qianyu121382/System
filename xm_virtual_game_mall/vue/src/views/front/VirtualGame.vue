@@ -1,10 +1,10 @@
 <template>
   <div style="width: 60%; margin: 10px auto;">
     <div style="margin-bottom: 20px">
-      <el-select v-model="data.typeId" placeholder="请选择宠物分类" size="large" style="width: 200px; margin-right: 10px">
+      <el-select v-model="data.typeId" placeholder="请选择游戏分类" size="large" style="width: 200px; margin-right: 10px">
         <el-option v-for="item in data.typeList" :key="item.id" :label="item.name" :value="item.id"></el-option>
       </el-select>
-      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入宠物名称搜索"></el-input>
+      <el-input v-model="data.name" size="large" style="width: 400px; margin-right: 10px" placeholder="请输入游戏名称搜索"></el-input>
       <el-button size="large" type="primary" @click="load">搜索</el-button>
       <el-button size="large" @click="reset">重置</el-button>
     </div>

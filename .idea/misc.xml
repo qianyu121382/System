@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/xm_pet_mall/springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/xm_virtual_game_mall/springboot/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

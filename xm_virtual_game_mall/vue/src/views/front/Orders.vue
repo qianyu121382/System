@@ -2,14 +2,14 @@
   <div style="width: 60%; margin: 10px auto">
     <div style="margin-bottom: 20px">
       <el-radio-group v-model="data.type">
-        <el-radio label="宠物购买订单" value="virtualGame"></el-radio>
-        <el-radio label="宠物用品订单" value="goods"></el-radio>
+        <el-radio label="游戏购买订单" value="virtualGame"></el-radio>
+        <el-radio label="游戏用品订单" value="goods"></el-radio>
       </el-radio-group>
     </div>
     <div class="card" style="padding: 20px" v-if="data.type === 'virtualGame'">
       <div style="margin-bottom: 20px">
         <el-input v-model="data.orderNo" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入订单编号查询"></el-input>
-        <el-input v-model="data.virtual_gameName" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入宠物名称查询"></el-input>
+        <el-input v-model="data.virtual_gameName" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入游戏名称查询"></el-input>
         <el-button type="info" plain @click="load">查询</el-button>
         <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
       </div>
@@ -21,12 +21,12 @@
               <div style="padding: 10px">
                 <el-descriptions title="订单详情" :column="3" border>
                   <el-descriptions-item label="订单号">{{ scope.row.orderNo }}</el-descriptions-item>
-                  <el-descriptions-item label="宠物店">{{ scope.row.shopName }}</el-descriptions-item>
-                  <el-descriptions-item label="宠物名称">{{ scope.row.virtual_gameName }}</el-descriptions-item>
-                  <el-descriptions-item label="宠物图片">
+                  <el-descriptions-item label="游戏店">{{ scope.row.shopName }}</el-descriptions-item>
+                  <el-descriptions-item label="游戏名称">{{ scope.row.virtual_gameName }}</el-descriptions-item>
+                  <el-descriptions-item label="游戏图片">
                     <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.virtual_gameImg" :preview-src-list="[scope.row.virtual_gameImg]" preview-teleported></el-image>
                   </el-descriptions-item>
-                  <el-descriptions-item label="宠物价格"><span style="color: red;">￥{{ scope.row.price }}</span></el-descriptions-item>
+                  <el-descriptions-item label="游戏价格"><span style="color: red;">￥{{ scope.row.price }}</span></el-descriptions-item>
                   <el-descriptions-item label="收货人">{{ scope.row.pickupUser }}</el-descriptions-item>
                   <el-descriptions-item label="收货地址">{{ scope.row.pickupAddress }}</el-descriptions-item>
                   <el-descriptions-item label="收货人联系方式">{{ scope.row.pickupPhone }}</el-descriptions-item>
@@ -43,14 +43,14 @@
             </template>
           </el-table-column>
           <el-table-column prop="orderNo" label="订单号"></el-table-column>
-          <el-table-column prop="shopName" label="宠物店"></el-table-column>
-          <el-table-column prop="virtual_gameName" label="宠物名称"></el-table-column>
-          <el-table-column prop="virtual_gameImg" label="宠物图片">
+          <el-table-column prop="shopName" label="游戏店"></el-table-column>
+          <el-table-column prop="virtual_gameName" label="游戏名称"></el-table-column>
+          <el-table-column prop="virtual_gameImg" label="游戏图片">
             <template #default="scope">
               <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.virtual_gameImg" :preview-src-list="[scope.row.virtual_gameImg]" preview-teleported></el-image>
             </template>
           </el-table-column>
-          <el-table-column prop="price" label="宠物价格">
+          <el-table-column prop="price" label="游戏价格">
             <template #default="scope">
               <span style="color: red">￥{{ scope.row.price }}</span>
             </template>
@@ -95,7 +95,7 @@
               <div style="padding: 10px">
                 <el-descriptions title="订单详情" :column="3" border>
                   <el-descriptions-item label="订单号">{{ scope.row.orderNo }}</el-descriptions-item>
-                  <el-descriptions-item label="宠物店">{{ scope.row.shopName }}</el-descriptions-item>
+                  <el-descriptions-item label="游戏店">{{ scope.row.shopName }}</el-descriptions-item>
                   <el-descriptions-item label="商品名称">{{ scope.row.goodsName }}</el-descriptions-item>
                   <el-descriptions-item label="商品图片">
                     <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.goodsImg" :preview-src-list="[scope.row.goodsImg]" preview-teleported></el-image>
@@ -119,7 +119,7 @@
             </template>
           </el-table-column>
           <el-table-column prop="orderNo" label="订单号"></el-table-column>
-          <el-table-column prop="shopName" label="宠物店"></el-table-column>
+          <el-table-column prop="shopName" label="游戏店"></el-table-column>
           <el-table-column prop="goodsName" label="商品名称"></el-table-column>
           <el-table-column prop="goodsImg" label="商品图片">
             <template #default="scope">

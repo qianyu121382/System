@@ -1,7 +1,7 @@
 <template>
   <div style="width: 60%; margin: 10px auto">
     <div class="card" style="padding: 20px">
-      <div style="margin-bottom: 20px; font-size: 24px; font-weight: bold">我收藏的宠物</div>
+      <div style="margin-bottom: 20px; font-size: 24px; font-weight: bold">我收藏的游戏</div>
       <div style="margin: 20px 0" v-if="data.total > 0">
         <el-row :gutter="20">
           <el-col :span="6" v-for="item in data.tableData" :key="item.id">
