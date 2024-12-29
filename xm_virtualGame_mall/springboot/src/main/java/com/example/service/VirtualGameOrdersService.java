@@ -37,7 +37,7 @@ public class VirtualGameOrdersService
     @Transactional
     public void add(VirtualGameOrders virtualGameOrders) {
         // 判断库存是否足够
-        Integer virtualGameId = virtualGameOrders.getPetId();
+        Integer virtualGameId = virtualGameOrders.getVirtualGameId();
         VirtualGame virtualGame = virtualGameService.selectById(virtualGameId);
         if (virtualGame.getStore() < 1) {  // 库存不足
             throw new CustomException("500", "宠物剩余数量不足");
@@ -54,8 +54,8 @@ public class VirtualGameOrdersService
         virtualGameOrders.setOrderNo(orderNo);
 
         virtualGameOrders.setUserId(currentUser.getId());
-        virtualGameOrders.setPetName(virtualGame.getName());
-        virtualGameOrders.setPetImg(virtualGame.getImg());
+        virtualGameOrders.setVirtualGameName(virtualGame.getName());
+        virtualGameOrders.setVirtualGameImg(virtualGame.getImg());
         virtualGameOrders.setPrice(virtualGame.getPrice());
         // 设置收货地址信息
         if (virtualGameOrders.getAddressId() != null) {
@@ -73,7 +73,7 @@ public class VirtualGameOrdersService
     @Transactional
     public void updateById(VirtualGameOrders virtualGameOrders) {
         Account currentUser = TokenUtils.getCurrentUser();
-        Integer virtualGameId = virtualGameOrders.getPetId();
+        Integer virtualGameId = virtualGameOrders.getVirtualGameId();
         VirtualGame virtualGame = virtualGameService.selectById(virtualGameId);
         // 用户取消订单
         if (RoleEnum.USER.name().equals(currentUser.getRole())) {

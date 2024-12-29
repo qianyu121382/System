@@ -91,27 +91,27 @@ public class VirtualGameOrders
         this.shopId = shopId;
     }
 
-    public Integer getPetId() {
+    public Integer getVirtualGameId() {
         return virtualGameId;
     }
 
-    public void setPetId(Integer virtualGameId) {
+    public void setVirtualGameId(Integer virtualGameId) {
         this.virtualGameId = virtualGameId;
     }
 
-    public String getPetName() {
+    public String getVirtualGameName() {
         return virtualGameName;
     }
 
-    public void setPetName(String virtualGameName) {
+    public void setVirtualGameName(String virtualGameName) {
         this.virtualGameName = virtualGameName;
     }
 
-    public String getPetImg() {
+    public String getVirtualGameImg() {
         return virtualGameImg;
     }
 
-    public void setPetImg(String virtualGameImg) {
+    public void setVirtualGameImg(String virtualGameImg) {
         this.virtualGameImg = virtualGameImg;
     }
 

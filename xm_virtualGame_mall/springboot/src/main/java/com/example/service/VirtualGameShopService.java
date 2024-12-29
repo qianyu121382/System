@@ -94,7 +94,7 @@ public class VirtualGameShopService
             // 根据店铺id  查出这个店里面所有的宠物信息
             List<VirtualGame> virtualGameList = virtualGameService.selectAll(virtualGame);
             virtualGameList = virtualGameList.stream().limit(4).toList();
-            shop.setPetList(virtualGameList);
+            shop.setVirtualGameList(virtualGameList);
         }
         return PageInfo.of(list);
     }

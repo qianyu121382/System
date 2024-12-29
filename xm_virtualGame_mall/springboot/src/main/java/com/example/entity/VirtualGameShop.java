@@ -20,7 +20,7 @@ public class VirtualGameShop extends Account {
     /**手机号 */
     private String phone;
     /**销售宠物 */
-    private String sellPet;
+    private String sellVirtualGame;
     /**地址 */
     private String address;
     /**介绍 */
@@ -50,11 +50,11 @@ public class VirtualGameShop extends Account {
         this.sum = sum;
     }
 
-    public List<VirtualGame> getPetList() {
+    public List<VirtualGame> getVirtualGameList() {
         return virtualGameList;
     }
 
-    public void setPetList(List<VirtualGame> virtualGameList) {
+    public void setVirtualGameList(List<VirtualGame> virtualGameList) {
         this.virtualGameList = virtualGameList;
     }
 
@@ -112,12 +112,12 @@ public class VirtualGameShop extends Account {
         this.phone = phone;
     }
 
-    public String getSellPet() {
-        return sellPet;
+    public String getSellVirtualGame() {
+        return sellVirtualGame;
     }
 
-    public void setSellPet(String sellPet) {
-        this.sellPet = sellPet;
+    public void setSellVirtualGame(String sellVirtualGame) {
+        this.sellVirtualGame = sellVirtualGame;
     }
 
     public String getAddress() {

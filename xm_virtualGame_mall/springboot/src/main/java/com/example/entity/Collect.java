@@ -15,11 +15,11 @@ public class Collect {
     private String userName;
     private BigDecimal virtualGamePrice;
 
-    public BigDecimal getPetPrice() {
+    public BigDecimal getVirtualGamePrice() {
         return virtualGamePrice;
     }
 
-    public void setPetPrice(BigDecimal virtualGamePrice) {
+    public void setVirtualGamePrice(BigDecimal virtualGamePrice) {
         this.virtualGamePrice = virtualGamePrice;
     }
 
@@ -31,19 +31,19 @@ public class Collect {
         this.userName = userName;
     }
 
-    public String getPetName() {
+    public String getVirtualGameName() {
         return virtualGameName;
     }
 
-    public void setPetName(String virtualGameName) {
+    public void setVirtualGameName(String virtualGameName) {
         this.virtualGameName = virtualGameName;
     }
 
-    public String getPetImg() {
+    public String getVirtualGameImg() {
         return virtualGameImg;
     }
 
-    public void setPetImg(String virtualGameImg) {
+    public void setVirtualGameImg(String virtualGameImg) {
         this.virtualGameImg = virtualGameImg;
     }
 

@@ -10,11 +10,11 @@ public class Slideshow {
     private String img;
     private String virtualGameName;
 
-    public String getPetName() {
+    public String getVirtualGameName() {
         return virtualGameName;
     }
 
-    public void setPetName(String virtualGameName) {
+    public void setVirtualGameName(String virtualGameName) {
         this.virtualGameName = virtualGameName;
     }
 
@@ -26,11 +26,11 @@ public class Slideshow {
         this.id = id;
     }
 
-    public Integer getPetId() {
+    public Integer getVirtualGameId() {
         return virtualGameId;
     }
 
-    public void setPetId(Integer virtualGameId) {
+    public void setVirtualGameId(Integer virtualGameId) {
         this.virtualGameId = virtualGameId;
     }
 

@@ -137,6 +137,7 @@ const view = (goods) => {
 
 request.get('/slideshow/selectAll').then(res => {
   data.slideshowList = res.data
+  console.log(data.slideshowList);
 })
 
 request.get('/virtualGame/selectAll', {

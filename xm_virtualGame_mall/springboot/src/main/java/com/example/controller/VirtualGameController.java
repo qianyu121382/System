@@ -62,6 +62,8 @@ public class VirtualGameController
     @GetMapping("/selectById/{id}")
     public Result selectById(@PathVariable Integer id) {
         VirtualGame virtualGame = virtualGameService.selectById(id);
+        System.out.println("-----------------");
+        System.out.println(virtualGame.getImg());
         return Result.success(virtualGame);
     }
 

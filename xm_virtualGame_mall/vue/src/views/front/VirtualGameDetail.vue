@@ -134,6 +134,7 @@ if (data.user.id) {
 const load = () => {
   request.get('/virtualGame/selectById/' + data.id).then(res => {
     data.virtualGame = res.data
+    console.log("Loaded virtual game data:", data.virtualGame);
   })
 }
 load()
