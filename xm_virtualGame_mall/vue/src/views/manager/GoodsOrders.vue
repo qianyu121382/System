@@ -21,7 +21,7 @@
         <el-table-column type="selection" width="55"/>
         <el-table-column prop="orderNo" label="订单号"></el-table-column>
         <el-table-column prop="userName" label="用户"></el-table-column>
-        <el-table-column prop="shopName" label="宠物店"></el-table-column>
+        <el-table-column prop="shopName" label="游戏店"></el-table-column>
         <el-table-column prop="goodsName" label="商品名称"></el-table-column>
         <el-table-column prop="goodsImg" label="商品图片">
           <template #default="scope">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px">
-      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入宠物店主名称查询"></el-input>
+      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入游戏店主名称查询"></el-input>
       <el-button type="info" plain @click="load">查询</el-button>
       <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
     </div>
@@ -23,7 +23,7 @@
           </template>
         </el-table-column>
         <el-table-column prop="phone" label="手机号"></el-table-column>
-        <el-table-column prop="sellPet" label="销售宠物">
+        <el-table-column prop="sellPet" label="销售游戏">
           <template #default="scope">
             <el-tag style="margin-bottom: 5px" type="primary" v-for="item in JSON.parse(scope.row.sellPet || '[]')">{{ item }}</el-tag>
           </template>
@@ -61,7 +61,7 @@
       <el-pagination @current-change="load" background layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="宠物店主信息" v-model="data.formVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏店主信息" v-model="data.formVisible" width="40%" destroy-on-close>
       <el-form ref="form" :model="data.form" label-width="70px" style="padding: 20px">
         <el-form-item prop="username" label="账号">
           <el-input v-model="data.form.username" placeholder="请输入账号"></el-input>
@@ -81,7 +81,7 @@
         <el-form-item prop="phone" label="手机号">
           <el-input v-model="data.form.phone" placeholder="请输入手机号"></el-input>
         </el-form-item>
-        <el-form-item prop="sellPet" label="销售宠物">
+        <el-form-item prop="sellPet" label="销售游戏">
           <el-select multiple style="width: 100%" v-model="data.sellPet">
             <el-option v-for="item in data.virtualGameTypeList" :key="item.id" :value="item.name" :label="item.name"></el-option>
           </el-select>

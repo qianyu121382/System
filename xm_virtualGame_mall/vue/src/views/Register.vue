@@ -15,7 +15,7 @@
         <el-form-item prop="role">
           <el-select v-model="data.form.role" style="width: 100%" size="large" placeholder="请选择角色">
             <el-option label="普通用户" value="USER"></el-option>
-            <el-option label="宠物店主" value="PETSHOP"></el-option>
+            <el-option label="游戏店主" value="PETSHOP"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item>

@@ -2,7 +2,7 @@
   <div>
     <div class="card" style="margin-bottom: 5px">
       <el-input v-model="data.orderNo" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入订单编号查询"></el-input>
-      <el-input v-model="data.virtualGameName" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入宠物名称查询"></el-input>
+      <el-input v-model="data.virtualGameName" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入游戏名称查询"></el-input>
       <el-select placeholder="请选择订单状态" v-model="data.status" style="width: 240px; margin-right: 10px">
         <el-option label="待支付" value="待支付"></el-option>
         <el-option label="待发货" value="待发货"></el-option>
@@ -21,14 +21,14 @@
         <el-table-column type="selection" width="55" />
         <el-table-column prop="orderNo" label="订单号"></el-table-column>
         <el-table-column prop="userName" label="用户"></el-table-column>
-        <el-table-column prop="shopName" label="宠物店"></el-table-column>
-        <el-table-column prop="virtualGameName" label="宠物名称"></el-table-column>
-        <el-table-column prop="virtualGameImg" label="宠物图片">
+        <el-table-column prop="shopName" label="游戏店"></el-table-column>
+        <el-table-column prop="virtualGameName" label="游戏名称"></el-table-column>
+        <el-table-column prop="virtualGameImg" label="游戏图片">
           <template #default="scope">
             <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.virtualGameImg" :preview-src-list="[scope.row.virtualGameImg]" preview-teleported></el-image>
           </template>
         </el-table-column>
-        <el-table-column prop="price" label="宠物价格"></el-table-column>
+        <el-table-column prop="price" label="游戏价格"></el-table-column>
         <el-table-column prop="pickupUser" label="收货人名称"></el-table-column>
         <el-table-column prop="pickupAddress" label="收货人地址"></el-table-column>
         <el-table-column prop="pickupPhone" label="收货人电话"></el-table-column>

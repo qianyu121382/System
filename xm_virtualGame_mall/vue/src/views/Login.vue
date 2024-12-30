@@ -12,7 +12,7 @@
         <el-form-item prop="role">
           <el-select size="large" v-model="data.form.role">
             <el-option value="USER" label="普通用户"></el-option>
-            <el-option value="PETSHOP" label="宠物店主"></el-option>
+            <el-option value="PETSHOP" label="游戏店主"></el-option>
             <el-option value="ADMIN" label="超级管理员"></el-option>
           </el-select>
         </el-form-item>

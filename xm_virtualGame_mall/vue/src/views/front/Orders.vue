@@ -3,7 +3,7 @@
     <div style="margin-bottom: 20px">
       <el-radio-group v-model="data.type">
         <el-radio label="游戏购买订单" value="virtualGame"></el-radio>
-        <el-radio label="游戏用品订单" value="goods"></el-radio>
+        <el-radio label="游戏周边订单" value="goods"></el-radio>
       </el-radio-group>
     </div>
     <div class="card" style="padding: 20px" v-if="data.type === 'virtualGame'">

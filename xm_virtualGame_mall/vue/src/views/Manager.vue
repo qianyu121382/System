@@ -3,7 +3,7 @@
     <div class="manager-header">
       <div class="manager-header-left">
         <img src="@/assets/imgs/logo.png" alt="">
-        <div class="title">宠物商城</div>
+        <div class="title">游戏商城</div>
       </div>
       <div class="manager-header-center">
         <el-breadcrumb separator="/">
@@ -53,16 +53,16 @@
               <el-icon><Menu /></el-icon>
               <span>信息管理</span>
             </template>
-            <el-menu-item index="/manager/virtualGameType" v-if="data.user.role === 'ADMIN'">宠物类型</el-menu-item>
-            <el-menu-item index="/manager/goodsType" v-if="data.user.role === 'ADMIN'">宠物用品类型</el-menu-item>
-            <el-menu-item index="/manager/virtualGame">宠物信息</el-menu-item>
-            <el-menu-item index="/manager/goods">宠物用品信息</el-menu-item>
-            <el-menu-item index="/manager/virtualGameOrders">宠物订单信息</el-menu-item>
-            <el-menu-item index="/manager/goodsOrders">宠物用品订单</el-menu-item>
-            <el-menu-item index="/manager/forum" v-if="data.user.role === 'ADMIN'">宠物帖子信息</el-menu-item>
-            <el-menu-item index="/manager/comment" v-if="data.user.role === 'ADMIN'">宠物帖子评论</el-menu-item>
+            <el-menu-item index="/manager/virtualGameType" v-if="data.user.role === 'ADMIN'">游戏类型</el-menu-item>
+            <el-menu-item index="/manager/goodsType" v-if="data.user.role === 'ADMIN'">游戏周边类型</el-menu-item>
+            <el-menu-item index="/manager/virtualGame">游戏信息</el-menu-item>
+            <el-menu-item index="/manager/goods">游戏周边信息</el-menu-item>
+            <el-menu-item index="/manager/virtualGameOrders">游戏订单信息</el-menu-item>
+            <el-menu-item index="/manager/goodsOrders">游戏周边订单</el-menu-item>
+            <el-menu-item index="/manager/forum" v-if="data.user.role === 'ADMIN'">游戏帖子信息</el-menu-item>
+            <el-menu-item index="/manager/comment" v-if="data.user.role === 'ADMIN'">游戏帖子评论</el-menu-item>
             <el-menu-item index="/manager/slideshow" v-if="data.user.role === 'ADMIN'">轮播图信息</el-menu-item>
-            <el-menu-item index="/manager/collect" v-if="data.user.role === 'ADMIN'">宠物收藏信息</el-menu-item>
+            <el-menu-item index="/manager/collect" v-if="data.user.role === 'ADMIN'">游戏收藏信息</el-menu-item>
             <el-menu-item index="/manager/address" v-if="data.user.role === 'ADMIN'">用户收货地址</el-menu-item>
             <el-menu-item index="/manager/notice" v-if="data.user.role === 'ADMIN'">系统公告</el-menu-item>
           </el-sub-menu>
@@ -72,7 +72,7 @@
               <span>用户管理</span>
             </template>
             <el-menu-item index="/manager/user">普通用户信息</el-menu-item>
-            <el-menu-item index="/manager/virtualGameShop">宠物店主信息</el-menu-item>
+            <el-menu-item index="/manager/virtualGameShop">游戏店主信息</el-menu-item>
             <el-menu-item index="/manager/admin">管理员信息</el-menu-item>
           </el-sub-menu>
         </el-menu>

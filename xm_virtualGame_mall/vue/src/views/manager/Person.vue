@@ -18,7 +18,7 @@
       <el-form-item prop="name" label="名称">
         <el-input v-model="data.user.name" placeholder="请输入名称"></el-input>
       </el-form-item>
-      <el-form-item prop="sellPet" label="销售宠物">
+      <el-form-item prop="sellPet" label="销售游戏">
         <el-select multiple style="width: 100%" v-model="data.sellPet">
           <el-option v-for="item in data.virtualGameTypeList" :key="item.id" :value="item.name" :label="item.name"></el-option>
         </el-select>
