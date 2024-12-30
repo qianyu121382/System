@@ -43,7 +43,7 @@
       <el-pagination @current-change="load" background layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="宠物用品信息" v-model="data.formVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏周边信息" v-model="data.formVisible" width="40%" destroy-on-close>
       <el-form ref="formRef" :model="data.form" :rules="data.rules" label-width="90px" style="padding: 20px">
         <el-form-item prop="typeId" label="商品类型">
           <el-select style="width: 100%" v-model="data.form.typeId">

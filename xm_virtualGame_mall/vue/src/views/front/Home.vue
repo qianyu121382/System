@@ -52,8 +52,8 @@
 
     <div style="margin: 20px 0">
       <div style="display: flex; align-items: center; margin-bottom: 20px">
-        <div style="flex: 1; font-size: 24px; font-weight: bold">热销游戏用品</div>
-        <div style="cursor: pointer" @click="goTo('/front/goods')">查看所有游戏用品 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
+        <div style="flex: 1; font-size: 24px; font-weight: bold">热销游戏周边</div>
+        <div style="cursor: pointer" @click="goTo('/front/goods')">查看所有游戏周边 <el-icon style="top: 2px"><ArrowRight /></el-icon></div>
       </div>
       <el-row :gutter="20">
        <el-col :span="6" v-for="item in data.goodsList" :key="item.id">
@@ -80,7 +80,7 @@
       </el-row>
     </div>
 
-    <el-dialog title="游戏用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏周边详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
       <div style="padding: 20px; color: #333">
         <div style="text-align: center; margin-bottom: 10px"><img style="width: 50%" :src="data.goods.img" alt=""></div>
         <div style="display: flex; align-items: center; margin-bottom: 10px">

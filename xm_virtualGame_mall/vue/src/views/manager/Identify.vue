@@ -1,6 +1,6 @@
 <template>
   <div style="width: 50%" class="card">
-    <div style="margin-bottom: 10px; color: red">一旦认证信息修改，宠物店的认证状态就会变为待审批状态，将无法使用宠物店功能</div>
+    <div style="margin-bottom: 10px; color: red">一旦认证信息修改，游戏店的认证状态就会变为待审批状态，将无法使用游戏店功能</div>
     <el-form ref="formRef" :model="data.from" label-width="70px" style="padding: 20px">
       <el-form-item prop="practiceLicense" label="认证证件">
         <el-upload
@@ -45,7 +45,7 @@ const data = reactive({
   from: {},
 })
 
-// 拷贝 宠物店主用户的 信息
+// 拷贝 游戏店主用户的 信息
 const load = () => {
   request.get('/virtualGameShop/selectById/' + data.user.id).then(res => {
     data.from = res.data

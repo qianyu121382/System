@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px">
-      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入宠物名称查询"></el-input>
+      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入游戏名称查询"></el-input>
       <el-button type="info" plain @click="load">查询</el-button>
       <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
     </div>
@@ -13,7 +13,7 @@
     <div class="card" style="margin-bottom: 5px">
       <el-table stripe :data="data.tableData" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
-        <el-table-column prop="virtualGameName" label="宠物名称"></el-table-column>
+        <el-table-column prop="virtualGameName" label="游戏名称"></el-table-column>
         <el-table-column prop="img" label="图片">
           <template #default="scope">
             <el-image style="width: 100px; height: 50px; border-radius: 5px" :src="scope.row.img" :preview-src-list="[scope.row.img]" preview-teleported></el-image>
@@ -33,7 +33,7 @@
 
     <el-dialog title="轮播图信息" v-model="data.formVisible" width="40%" destroy-on-close>
       <el-form ref="form" :model="data.form" label-width="70px" style="padding: 20px">
-        <el-form-item prop="virtualGameId" label="关联宠物">
+        <el-form-item prop="virtualGameId" label="关联游戏">
           <el-select style="width: 100%" v-model="data.form.virtualGameId">
             <el-option v-for="item in data.virtualGameList" :key="item.id" :value="item.id" :label="item.name"></el-option>
           </el-select>

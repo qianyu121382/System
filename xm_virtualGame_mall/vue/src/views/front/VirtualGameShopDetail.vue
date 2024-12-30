@@ -50,7 +50,7 @@
     </div>
 
     <div class="card" style="padding: 20px; margin-bottom: 20px">
-      <div style="font-size: 24px; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #ccc">游戏用品信息</div>
+      <div style="font-size: 24px; font-weight: bold; padding-bottom: 10px; border-bottom: 1px solid #ccc">游戏周边信息</div>
       <div style="padding-top: 20px" v-if="data.goodsTotal > 0">
         <el-row :gutter="20">
           <el-col :span="6" v-for="item in data.goodsList" :key="item.id">
@@ -81,11 +81,11 @@
         </div>
       </div>
       <div style="padding-top: 40px; text-align: center; color: #666" v-else>
-        暂无游戏用品...
+        暂无游戏周边...
       </div>
     </div>
 
-    <el-dialog title="游戏用品详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏周边详情" v-model="data.goodsVisible" width="40%" destroy-on-close>
       <div style="padding: 20px; color: #333">
         <div style="text-align: center; margin-bottom: 10px"><img style="width: 50%" :src="data.goods.img" alt=""></div>
         <div style="display: flex; align-items: center; margin-bottom: 10px">
@@ -168,7 +168,7 @@ const loadPetList = () => {
 loadPetList()
 
 const loadGoodsList = () => {
-  // 查询游戏用品列表
+  // 查询游戏周边列表
   request.get('/goods/selectPage', {
     params: {
       pageNum: data.goodsPageNum,

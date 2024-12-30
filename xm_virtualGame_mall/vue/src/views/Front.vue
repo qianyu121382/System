@@ -10,7 +10,7 @@
           <el-menu-item index="/front/home">首页</el-menu-item>
           <el-menu-item index="/front/virtualGameShop">游戏店</el-menu-item>
           <el-menu-item index="/front/virtualGame">游戏信息</el-menu-item>
-          <el-menu-item index="/front/goods">游戏用品</el-menu-item>
+          <el-menu-item index="/front/goods">游戏周边</el-menu-item>
           <el-menu-item index="/front/cart">购物车</el-menu-item>
           <el-menu-item index="/front/orders">我的订单</el-menu-item>
           <el-menu-item index="/front/forum">游戏论坛</el-menu-item>

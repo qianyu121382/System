@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px">
-      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入宠物名称查询"></el-input>
+      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入游戏名称查询"></el-input>
       <el-button type="info" plain @click="load">查询</el-button>
       <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
     </div>
@@ -13,19 +13,18 @@
     <div class="card" style="margin-bottom: 5px">
       <el-table tooltip-effect="dark myTooltip" stripe :data="data.tableData" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
-        <el-table-column prop="shopName" label="宠物店"></el-table-column>
-        <el-table-column prop="typeName" label="宠物类型"></el-table-column>
-        <el-table-column prop="name" label="宠物名称"></el-table-column>
-        <el-table-column prop="sex" label="宠物性别"></el-table-column>
-        <el-table-column prop="img" label="宠物图片">
+        <el-table-column prop="shopName" label="游戏店"></el-table-column>
+        <el-table-column prop="typeName" label="游戏类型"></el-table-column>
+        <el-table-column prop="name" label="游戏名称"></el-table-column>
+        <el-table-column prop="img" label="游戏图片">
           <template #default="scope">
             <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.img" :preview-src-list="[scope.row.img]" preview-teleported></el-image>
           </template>
         </el-table-column>
-        <el-table-column prop="price" label="宠物价格"></el-table-column>
+        <el-table-column prop="price" label="游戏价格"></el-table-column>
         <el-table-column prop="store" label="剩余数量"></el-table-column>
-        <el-table-column prop="introduce" label="宠物介绍" show-overflow-tooltip></el-table-column>
-        <el-table-column prop="status" label="宠物状态">
+        <el-table-column prop="introduce" label="游戏介绍" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="status" label="游戏状态">
           <template v-slot="scope">
             <el-tag type="success" v-if="scope.row.status === '上架'">上架</el-tag>
             <el-tag type="danger" v-if="scope.row.status === '下架'">下架</el-tag>
@@ -37,7 +36,7 @@
             <el-tag type="danger" v-if="scope.row.recommend === '否'">否</el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="宠物详情">
+        <el-table-column label="游戏详情">
           <template #default="scope">
             <el-button type="primary" @click="view(scope.row.content)">查看内容</el-button>
           </template>
@@ -60,28 +59,22 @@
       <el-pagination @current-change="load" background layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="宠物信息" v-model="data.formVisible" width="50%" destroy-on-close>
+    <el-dialog title="游戏信息" v-model="data.formVisible" width="50%" destroy-on-close>
       <el-form ref="formRef" :model="data.form" :rules="data.rules" label-width="90px" style="padding: 20px">
-        <el-form-item prop="shopId" label="宠物店">
+        <el-form-item prop="shopId" label="游戏店">
           <el-select disabled style="width: 100%" v-model="data.form.shopId">
             <el-option v-for="item in data.shopList" :key="item.id" :value="item.id" :label="item.name"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item prop="typeId" label="宠物类型">
+        <el-form-item prop="typeId" label="游戏类型">
           <el-select style="width: 100%" v-model="data.form.typeId">
             <el-option v-for="item in data.typeList" :key="item.id" :value="item.id" :label="item.name"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item prop="name" label="宠物名称">
-          <el-input v-model="data.form.name" placeholder="请输入宠物名称"></el-input>
+        <el-form-item prop="name" label="游戏名称">
+          <el-input v-model="data.form.name" placeholder="请输入游戏名称"></el-input>
         </el-form-item>
-        <el-form-item prop="sex" label="宠物性别">
-          <el-radio-group v-model="data.form.sex">
-            <el-radio-button label="公" value="公"></el-radio-button>
-            <el-radio-button label="母" value="母"></el-radio-button>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item prop="img" label="宠物图片">
+        <el-form-item prop="img" label="游戏图片">
           <el-upload
               :action="baseUrl + '/files/upload'"
               :headers="{ 'token': data.user.token }"
@@ -91,16 +84,16 @@
             <el-button type="primary">上传</el-button>
           </el-upload>
         </el-form-item>
-        <el-form-item prop="price" label="宠物价格">
-          <el-input-number :step="5" :min="1" style="width: 200px" v-model="data.form.price" placeholder="请输入宠物价格"></el-input-number>
+        <el-form-item prop="price" label="游戏价格">
+          <el-input-number :step="5" :min="1" style="width: 200px" v-model="data.form.price" placeholder="请输入游戏价格"></el-input-number>
         </el-form-item>
         <el-form-item prop="store" label="剩余数量">
-          <el-input-number style="width: 200px" v-model="data.form.store" placeholder="请输入宠物数量"></el-input-number>
+          <el-input-number style="width: 200px" v-model="data.form.store" placeholder="请输入游戏数量"></el-input-number>
         </el-form-item>
-        <el-form-item prop="introduce" label="宠物介绍">
-          <el-input type="textarea" :rows="3" v-model="data.form.introduce" placeholder="请输入宠物介绍"></el-input>
+        <el-form-item prop="introduce" label="游戏介绍">
+          <el-input type="textarea" :rows="3" v-model="data.form.introduce" placeholder="请输入游戏介绍"></el-input>
         </el-form-item>
-        <el-form-item prop="status" label="宠物状态">
+        <el-form-item prop="status" label="游戏状态">
           <el-radio-group v-model="data.form.status">
             <el-radio-button label="上架" value="上架"></el-radio-button>
             <el-radio-button label="下架" value="下架"></el-radio-button>
@@ -112,7 +105,7 @@
 <!--            <el-radio-button label="否" value="否"></el-radio-button>-->
 <!--          </el-radio-group>-->
 <!--        </el-form-item>-->
-        <el-form-item label="宠物详情" prop="content">
+        <el-form-item label="游戏详情" prop="content">
           <div style="border: 1px solid #ccc; width: 100%">
             <Toolbar
                 style="border-bottom: 1px solid #ccc"
@@ -138,7 +131,7 @@
     </el-dialog>
 
 
-    <el-dialog title="宠物详情" v-model="data.viewVisible" width="50%" :close-on-click-modal="false" destroy-on-close>
+    <el-dialog title="游戏详情" v-model="data.viewVisible" width="50%" :close-on-click-modal="false" destroy-on-close>
       <div class="editor-content-view" style="padding: 20px" v-html="data.content"></div>
       <template #footer>
     <span class="dialog-footer">
@@ -230,7 +223,7 @@ request.get('/virtualGameShop/selectAll').then(res => {
 request.get('/virtualGameType/selectAll').then(res => {
   data.typeList = res.data
   let sellPet = JSON.parse(data.user.sellPet || '[]')
-  // 筛选出当前的宠物店的 销售宠物类型的范围
+  // 筛选出当前的游戏店的 销售游戏类型的范围
   data.typeList = data.typeList.filter(type => sellPet.includes(type.name))
 })
 

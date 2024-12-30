@@ -26,7 +26,7 @@
       <el-pagination @current-change="load" background layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="宠物类型信息" v-model="data.formVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏类型信息" v-model="data.formVisible" width="40%" destroy-on-close>
       <el-form ref="form" :model="data.form" label-width="70px" style="padding: 20px">
         <el-form-item prop="title" label="类型名称">
           <el-input v-model="data.form.name" placeholder="请输入类型名称"></el-input>

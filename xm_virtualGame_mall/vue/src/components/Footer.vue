@@ -28,7 +28,7 @@
             <div style="padding: 5px 0">6000 多次论坛讨论</div>
             <div style="padding: 5px 0">100+ 游戏店入驻</div>
             <div style="padding: 5px 0">3000+ 用户注册</div>
-            <div style="padding: 5px 0">38,000+ 游戏用品</div>
+            <div style="padding: 5px 0">38,000+ 游戏周边</div>
             <div style="padding: 5px 0">100+ 游戏信息</div>
           </div>
           <div style="margin-top: 20px">
@@ -48,8 +48,8 @@
               <div style="flex: 1; padding: 5px 0">游戏购买</div>
             </div>
             <div style="display: flex">
-              <div style="flex: 1; padding: 10px 0">游戏用品查看</div>
-              <div style="flex: 1; padding: 5px 0">游戏用品购买</div>
+              <div style="flex: 1; padding: 10px 0">游戏周边查看</div>
+              <div style="flex: 1; padding: 5px 0">游戏周边购买</div>
             </div>
             <div style="display: flex">
               <div style="flex: 1; padding: 10px 0">游戏店查看</div>

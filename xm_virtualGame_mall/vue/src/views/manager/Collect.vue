@@ -7,12 +7,12 @@
     <div class="card" style="margin-bottom: 5px">
       <el-table stripe :data="data.tableData" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
-        <el-table-column prop="virtualGameImg" label="宠物图片">
+        <el-table-column prop="virtualGameImg" label="游戏图片">
           <template #default="scope">
             <el-image style="width: 50px; height: 50px; border-radius: 5px" :src="scope.row.virtualGameImg" :preview-src-list="[scope.row.virtualGameImg]" preview-teleported></el-image>
           </template>
         </el-table-column>
-        <el-table-column prop="virtualGameName" label="宠物名称"></el-table-column>
+        <el-table-column prop="virtualGameName" label="游戏名称"></el-table-column>
         <el-table-column prop="userName" label="用户名称"></el-table-column>
         <el-table-column label="操作" width="100" fixed="right">
           <template v-slot="scope">

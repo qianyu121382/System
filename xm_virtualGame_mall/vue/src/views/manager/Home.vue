@@ -5,28 +5,28 @@
         <div class="card" style="flex: 1; padding: 20px; display: flex; align-items: center; grid-gap: 20px">
           <img style="width: 80px; height: 80px" src="@/assets/imgs/1.png" alt="">
           <div style="flex: 1; font-size: 20px">
-            <div style="margin-bottom: 10px">入驻宠物店</div>
+            <div style="margin-bottom: 10px">入驻游戏店</div>
             <div style="font-weight: bold">{{ data.count.virtualGameShop || 0 }}</div>
           </div>
         </div>
         <div class="card" style="flex: 1; padding: 20px; display: flex; align-items: center; grid-gap: 20px">
           <img style="width: 80px; height: 80px" src="@/assets/imgs/2.png" alt="">
           <div style="flex: 1; font-size: 20px">
-            <div style="margin-bottom: 10px">售卖宠物</div>
+            <div style="margin-bottom: 10px">售卖游戏</div>
             <div style="font-weight: bold">{{ data.count.virtualGame || 0  }}</div>
           </div>
         </div>
         <div class="card" style="flex: 1; padding: 20px; display: flex; align-items: center; grid-gap: 20px">
           <img style="width: 80px; height: 80px" src="@/assets/imgs/3.png" alt="">
           <div style="flex: 1; font-size: 20px">
-            <div style="margin-bottom: 10px">宠物帖子</div>
+            <div style="margin-bottom: 10px">游戏帖子</div>
             <div style="font-weight: bold">{{ data.count.forum || 0  }}</div>
           </div>
         </div>
         <div class="card" style="flex: 1; padding: 20px; display: flex; align-items: center; grid-gap: 20px">
           <img style="width: 80px; height: 80px" src="@/assets/imgs/4.png" alt="">
           <div style="flex: 1; font-size: 20px">
-            <div style="margin-bottom: 10px">宠物订单金额</div>
+            <div style="margin-bottom: 10px">游戏订单金额</div>
             <div style="font-weight: bold">{{ data.count.virtualGameOrders || 0  }}</div>
           </div>
         </div>
@@ -61,8 +61,8 @@ import * as echarts from 'echarts'
 
 const lineOption = {
   title: {
-    text: '近一周宠物订单销售额的趋势图',
-    subtext: '统计维度：每日宠物订单销售额',
+    text: '近一周游戏订单销售额的趋势图',
+    subtext: '统计维度：每日游戏订单销售额',
     left: 'center'
   },
   tooltip: {
@@ -98,7 +98,7 @@ const lineOption = {
 
 const pieOption = {
   title: {
-    text: '不同类型的宠物数量分布图',
+    text: '不同类型的游戏数量分布图',
     subtext: '比例图',
     left: 'center'
   },
@@ -134,7 +134,7 @@ const pieOption = {
 
 const barOption = {
   title: {
-    text: '不同宠物店的订单销售额统计',
+    text: '不同游戏店的订单销售额统计',
     subtext: '柱状图',
     left: 'center'
   },
