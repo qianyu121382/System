@@ -16,7 +16,7 @@
           <div style="padding-right: 20px; display: flex; align-items: center">
             <img style="width: 40px; height: 40px; border-radius: 50%;" :src="data.user.avatar" alt="">
             <span style="margin-left: 5px; color: white">{{ data.user.name }}</span>
-            <span v-if="data.user.role === 'PETSHOP'">
+            <span v-if="data.user.role === 'GAMESHOP'">
               <span v-if="data.user.status === '审核通过'">（已认证）</span>
               <span v-else>（未认证）</span>
             </span>
@@ -25,7 +25,7 @@
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item @click="router.push('/manager/person')">个人资料</el-dropdown-item>
-              <el-dropdown-item @click="router.push('/manager/identify')" v-if="data.user.role === 'PETSHOP'">认证信息</el-dropdown-item>
+              <el-dropdown-item @click="router.push('/manager/identify')" v-if="data.user.role === 'GAMESHOP'">认证信息</el-dropdown-item>
               <el-dropdown-item @click="router.push('/manager/password')">修改密码</el-dropdown-item>
               <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
             </el-dropdown-menu>
@@ -44,16 +44,16 @@
             <el-icon><HomeFilled /></el-icon>
             <span>系统首页</span>
           </el-menu-item>
-          <el-menu-item index="/manager/noticeView" v-if="data.user.role === 'PETSHOP'">
+          <el-menu-item index="/manager/noticeView" v-if="data.user.role === 'GAMESHOP'">
             <el-icon><Phone /></el-icon>
             <span>系统公告</span>
           </el-menu-item>
-          <el-sub-menu index="1" v-if="data.user.role === 'ADMIN' || (data.user.role === 'PETSHOP' && data.user.status === '审核通过')">
+          <el-sub-menu index="1" v-if="data.user.role === 'ADMIN' || (data.user.role === 'GAMESHOP' && data.user.status === '审核通过')">
             <template #title>
               <el-icon><Menu /></el-icon>
               <span>信息管理</span>
             </template>
-            <el-menu-item index="/manager/virtualGameType" v-if="data.user.role === 'ADMIN'">游戏类型</el-menu-item>
+            <el-menu-item index="/manager/virtualGameType" v-if="data.user.role === 'ADMIN'">游戏周边</el-menu-item>
             <el-menu-item index="/manager/goodsType" v-if="data.user.role === 'ADMIN'">游戏周边类型</el-menu-item>
             <el-menu-item index="/manager/virtualGame">游戏信息</el-menu-item>
             <el-menu-item index="/manager/goods">游戏周边信息</el-menu-item>

@@ -60,7 +60,7 @@ public class VirtualGameService
 
     public PageInfo<VirtualGame> selectPage(VirtualGame virtualGame, Integer pageNum, Integer pageSize) {
         Account currentUser = TokenUtils.getCurrentUser();
-        if (currentUser != null && RoleEnum.PETSHOP.name().equals(currentUser.getRole())) {
+        if (currentUser != null && RoleEnum.GAMESHOP.name().equals(currentUser.getRole())) {
             virtualGame.setShopId(currentUser.getId());
         }
         PageHelper.startPage(pageNum, pageSize);

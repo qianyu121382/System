@@ -26,7 +26,7 @@
             <if test="password != null">password,</if>
             <if test="avatar != null">avatar,</if>
             <if test="phone != null">phone,</if>
-            <if test="sellPet != null">sell_virtualGame,</if>
+            <if test="sellVirtualGame != null">sell_virtualGame,</if>
             <if test="address != null">address,</if>
             <if test="introduce != null">introduce,</if>
             <if test="email != null">email,</if>
@@ -44,7 +44,7 @@
             <if test="password != null">#{password},</if>
             <if test="avatar != null">#{avatar},</if>
             <if test="phone != null">#{phone},</if>
-            <if test="sellPet != null">#{sellPet},</if>
+            <if test="sellVirtualGame != null">#{sellVirtualGame},</if>
             <if test="address != null">#{address},</if>
             <if test="introduce != null">#{introduce},</if>
             <if test="email != null">#{email},</if>
@@ -78,8 +78,8 @@
             <if test="phone != null">
             phone = #{phone},
             </if>
-            <if test="sellPet != null">
-            sell_virtualGame = #{sellPet},
+            <if test="sellVirtualGame != null">
+            sell_virtualGame = #{sellVirtualGame},
             </if>
             <if test="address != null">
             address = #{address},

@@ -18,8 +18,8 @@
       <el-form-item prop="name" label="名称">
         <el-input v-model="data.user.name" placeholder="请输入名称"></el-input>
       </el-form-item>
-      <el-form-item prop="sellPet" label="销售游戏">
-        <el-select multiple style="width: 100%" v-model="data.sellPet">
+      <el-form-item prop="sellVirtualGame" label="销售游戏">
+        <el-select multiple style="width: 100%" v-model="data.sellVirtualGame">
           <el-option v-for="item in data.virtualGameTypeList" :key="item.id" :value="item.name" :label="item.name"></el-option>
         </el-select>
       </el-form-item>
@@ -51,12 +51,12 @@ const baseUrl = import.meta.env.VITE_BASE_URL
 
 const data = reactive({
   user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
-  sellPet: [],
+  sellVirtualGame: [],
   virtualGameTypeList: []
 })
 
-if (data.user.role === 'PETSHOP') {
-  data.sellPet = JSON.parse(data.user.sellPet || '[]')
+if (data.user.role === 'GAMESHOP') {
+  data.sellVirtualGame = JSON.parse(data.user.sellVirtualGame || '[]')
 }
 
 request.get('/virtualGameType/selectAll').then(res => {
@@ -79,9 +79,9 @@ const update = () => {
         ElMessage.error(res.msg)
       }
     })
-  } else if (data.user.role === 'PETSHOP') {
+  } else if (data.user.role === 'GAMESHOP') {
     // 将json数组转换成 字符串 存储到数据库
-    data.user.sellPet = JSON.stringify(data.sellPet)
+    data.user.sellVirtualGame = JSON.stringify(data.sellVirtualGame)
     request.put('/virtualGameShop/update', data.user).then(res => {
       if (res.code === '200') {
         ElMessage.success('保存成功')

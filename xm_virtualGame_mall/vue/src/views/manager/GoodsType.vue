@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card" style="margin-bottom: 5px">
-      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入类型名称查询"></el-input>
+      <el-input v-model="data.name" prefix-icon="Search" style="width: 240px; margin-right: 10px" placeholder="请输入周边名称查询"></el-input>
       <el-button type="info" plain @click="load">查询</el-button>
       <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
     </div>
@@ -13,7 +13,7 @@
     <div class="card" style="margin-bottom: 5px">
       <el-table stripe :data="data.tableData" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
-        <el-table-column prop="name" label="类型名称" />
+        <el-table-column prop="name" label="周边名称" />
         <el-table-column label="操作" width="100" fixed="right">
           <template v-slot="scope">
             <el-button type="primary" circle :icon="Edit" @click="handleEdit(scope.row)"></el-button>
@@ -26,10 +26,10 @@
       <el-pagination @current-change="load" background layout="total, prev, pager, next" :page-size="data.pageSize" v-model:current-page="data.pageNum" :total="data.total" />
     </div>
 
-    <el-dialog title="游戏类型信息" v-model="data.formVisible" width="40%" destroy-on-close>
+    <el-dialog title="游戏周边信息" v-model="data.formVisible" width="40%" destroy-on-close>
       <el-form ref="form" :model="data.form" label-width="70px" style="padding: 20px">
-        <el-form-item prop="title" label="类型名称">
-          <el-input v-model="data.form.name" placeholder="请输入类型名称"></el-input>
+        <el-form-item prop="title" label="周边名称">
+          <el-input v-model="data.form.name" placeholder="请输入周边名称"></el-input>
         </el-form-item>
       </el-form>
       <template #footer>

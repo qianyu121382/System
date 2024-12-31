@@ -11,7 +11,7 @@
           <img :src="item.avatar" alt="" style="width: 100px; height: 100px">
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around">
             <div style="font-size: 20px; font-weight: bold">{{ item.name }}</div>
-            <div style="margin: 10px 0"><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
+            <div style="margin: 10px 0"><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellVirtualGame || '[]').join('、') }}</div>
             <div><span style="color: #666">店铺地址：</span>{{ item.address }}</div>
           </div>
         </div>

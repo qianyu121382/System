@@ -44,7 +44,7 @@
         <el-table-column prop="time" label="创建时间" show-overflow-tooltip></el-table-column>
         <el-table-column label="操作" width="150" fixed="right">
           <template v-slot="scope">
-            <el-button type="primary" v-if="data.user.role === 'PETSHOP' && scope.row.status === '待发货'" @click="send(scope.row)">发货</el-button>
+            <el-button type="primary" v-if="data.user.role === 'GAMESHOP' && scope.row.status === '待发货'" @click="send(scope.row)">发货</el-button>
             <el-button type="danger" circle :icon="Delete" @click="del(scope.row.id)" v-if="data.user.role === 'ADMIN'"></el-button>
           </template>
         </el-table-column>

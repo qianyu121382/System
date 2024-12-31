@@ -23,9 +23,9 @@
           </template>
         </el-table-column>
         <el-table-column prop="phone" label="手机号"></el-table-column>
-        <el-table-column prop="sellPet" label="销售游戏">
+        <el-table-column prop="sellVirtualGame" label="销售游戏">
           <template #default="scope">
-            <el-tag style="margin-bottom: 5px" type="primary" v-for="item in JSON.parse(scope.row.sellPet || '[]')">{{ item }}</el-tag>
+            <el-tag style="margin-bottom: 5px" type="primary" v-for="item in JSON.parse(scope.row.sellVirtualGame || '[]')">{{ item }}</el-tag>
           </template>
         </el-table-column>
         <el-table-column prop="address" label="地址" show-overflow-tooltip></el-table-column>
@@ -81,8 +81,8 @@
         <el-form-item prop="phone" label="手机号">
           <el-input v-model="data.form.phone" placeholder="请输入手机号"></el-input>
         </el-form-item>
-        <el-form-item prop="sellPet" label="销售游戏">
-          <el-select multiple style="width: 100%" v-model="data.sellPet">
+        <el-form-item prop="sellVirtualGame" label="销售游戏">
+          <el-select multiple style="width: 100%" v-model="data.sellVirtualGame">
             <el-option v-for="item in data.virtualGameTypeList" :key="item.id" :value="item.name" :label="item.name"></el-option>
           </el-select>
         </el-form-item>
@@ -126,7 +126,7 @@ const data = reactive({
   total: 0,
   name: null,
   ids: [],
-  sellPet: [],
+  sellVirtualGame: [],
   virtualGameTypeList: []
 })
 
@@ -152,13 +152,13 @@ const load = () => {
 }
 
 const handleAdd = () => {
-  data.form = { role: 'PETSHOP' }
+  data.form = { role: 'GAMESHOP' }
   data.formVisible = true
 }
 
 const handleEdit = (row) => {
   data.form = JSON.parse(JSON.stringify(row))
-  data.sellPet = JSON.parse(data.form.sellPet)
+  data.sellVirtualGame = JSON.parse(data.form.sellVirtualGame)
   data.formVisible = true
 }
 
@@ -205,7 +205,7 @@ const update = () => {
 
 const save = () => {
   // 将json数组转换成 字符串 存储到数据库
-  data.form.sellPet = JSON.stringify(data.sellPet)
+  data.form.sellVirtualGame = JSON.stringify(data.sellVirtualGame)
   data.form.id ? update() : add()
 }
 

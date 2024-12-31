@@ -111,7 +111,7 @@ public class VirtualGameOrdersService
         if (RoleEnum.USER.name().equals(currentUser.getRole())) {
             virtualGameOrders.setUserId(currentUser.getId());
         }
-        if (RoleEnum.PETSHOP.name().equals(currentUser.getRole())) {
+        if (RoleEnum.GAMESHOP.name().equals(currentUser.getRole())) {
             virtualGameOrders.setShopId(currentUser.getId());
         }
         PageHelper.startPage(pageNum, pageSize);
