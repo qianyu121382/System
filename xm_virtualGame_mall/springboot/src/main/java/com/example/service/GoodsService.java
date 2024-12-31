@@ -50,7 +50,7 @@ public class GoodsService {
 
     public PageInfo<Goods> selectPage(Goods goods, Integer pageNum, Integer pageSize) {
         Account currentUser = TokenUtils.getCurrentUser();
-        if (currentUser != null && RoleEnum.PETSHOP.name().equals(currentUser.getRole())) {
+        if (currentUser != null && RoleEnum.GAMESHOP.name().equals(currentUser.getRole())) {
             goods.setShopId(currentUser.getId());
         }
         PageHelper.startPage(pageNum, pageSize);

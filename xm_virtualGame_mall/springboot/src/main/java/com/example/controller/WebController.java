@@ -50,7 +50,7 @@ public class WebController {
         Account loginAccount = null;
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
             loginAccount = adminService.login(account);
-        } else if (RoleEnum.PETSHOP.name().equals(account.getRole())) {
+        } else if (RoleEnum.GAMESHOP.name().equals(account.getRole())) {
             loginAccount = virtualGameShopService.login(account);
         } else if (RoleEnum.USER.name().equals(account.getRole())) {
             loginAccount = userService.login(account);
@@ -63,7 +63,7 @@ public class WebController {
      */
     @PostMapping("/register")
     public Result register(@RequestBody Account account) {
-        if (RoleEnum.PETSHOP.name().equals(account.getRole())) {
+        if (RoleEnum.GAMESHOP.name().equals(account.getRole())) {
             VirtualGameShop virtualGameShop = new VirtualGameShop();
             BeanUtil.copyProperties(account, virtualGameShop);
             virtualGameShopService.add(virtualGameShop);
@@ -82,7 +82,7 @@ public class WebController {
     public Result updatePassword(@RequestBody Account account) {
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
             adminService.updatePassword(account);
-        } else if (RoleEnum.PETSHOP.name().equals(account.getRole())) {
+        } else if (RoleEnum.GAMESHOP.name().equals(account.getRole())) {
             virtualGameShopService.updatePassword(account);
         } else if (RoleEnum.USER.name().equals(account.getRole())) {
             userService.updatePassword(account);

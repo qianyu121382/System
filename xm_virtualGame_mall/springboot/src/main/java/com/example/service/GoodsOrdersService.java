@@ -124,7 +124,7 @@ public class GoodsOrdersService {
         if (RoleEnum.USER.name().equals(currentUser.getRole())) {
             goodsOrders.setUserId(currentUser.getId());
         }
-        if (RoleEnum.PETSHOP.name().equals(currentUser.getRole())) {
+        if (RoleEnum.GAMESHOP.name().equals(currentUser.getRole())) {
             goodsOrders.setShopId(currentUser.getId());
         }
         PageHelper.startPage(pageNum, pageSize);

@@ -52,7 +52,7 @@ public class JWTInterceptor implements HandlerInterceptor {
             // 根据用户角色判断用户属于哪个数据库表 然后查询用户数据
             if (RoleEnum.ADMIN.name().equals(role)) {
                 account = adminService.selectById(Integer.valueOf(userId));
-            } else if (RoleEnum.PETSHOP.name().equals(role)) {
+            } else if (RoleEnum.GAMESHOP.name().equals(role)) {
                 account = virtualGameShopService.selectById(Integer.valueOf(userId));
             } else if (RoleEnum.USER.name().equals(role)) {
                 account = userService.selectById(Integer.valueOf(userId));

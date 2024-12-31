@@ -6,7 +6,7 @@
       <el-button type="warning" plain style="margin: 0 10px" @click="reset">重置</el-button>
     </div>
     <div class="card" style="margin-bottom: 5px">
-      <el-button type="primary" plain @click="handleAdd" v-if="data.user.role === 'PETSHOP'">新增</el-button>
+      <el-button type="primary" plain @click="handleAdd" v-if="data.user.role === 'GAMESHOP'">新增</el-button>
       <el-button type="danger" plain @click="delBatch">批量删除</el-button>
     </div>
 
@@ -14,7 +14,7 @@
       <el-table tooltip-effect="dark myTooltip" stripe :data="data.tableData" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
         <el-table-column prop="shopName" label="游戏店"></el-table-column>
-        <el-table-column prop="typeName" label="游戏类型"></el-table-column>
+        <el-table-column prop="typeName" label="游戏周边"></el-table-column>
         <el-table-column prop="name" label="游戏名称"></el-table-column>
         <el-table-column prop="img" label="游戏图片">
           <template #default="scope">
@@ -49,7 +49,7 @@
         </el-table-column>
         <el-table-column label="操作" width="100" fixed="right">
           <template v-slot="scope">
-            <el-button type="primary" circle :icon="Edit" @click="handleEdit(scope.row)" v-if="data.user.role === 'PETSHOP'"></el-button>
+            <el-button type="primary" circle :icon="Edit" @click="handleEdit(scope.row)" v-if="data.user.role === 'GAMESHOP'"></el-button>
             <el-button type="danger" circle :icon="Delete" @click="del(scope.row.id)"></el-button>
           </template>
         </el-table-column>
@@ -222,9 +222,9 @@ request.get('/virtualGameShop/selectAll').then(res => {
 
 request.get('/virtualGameType/selectAll').then(res => {
   data.typeList = res.data
-  let sellPet = JSON.parse(data.user.sellPet || '[]')
-  // 筛选出当前的游戏店的 销售游戏类型的范围
-  data.typeList = data.typeList.filter(type => sellPet.includes(type.name))
+  let sellVirtualGame = JSON.parse(data.user.sellVirtualGame || '[]')
+  // 筛选出当前的游戏店的 销售游戏周边的范围
+  data.typeList = data.typeList.filter(type => sellVirtualGame.includes(type.name))
 })
 
 const load = () => {

@@ -43,7 +43,7 @@
             </div>
             <div>
               <div style="margin-bottom: 20px"><span style="color: #666">游戏店地址：</span>{{ item.address }}</div>
-              <div><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellPet || '[]').join('、') }}</div>
+              <div><span style="color: #666">售卖游戏：</span>{{ JSON.parse(item.sellVirtualGame || '[]').join('、') }}</div>
             </div>
           </div>
         </div>

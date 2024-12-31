@@ -5,8 +5,8 @@
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around">
         <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px">{{ data.shop.name }}</div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">游戏类型：</span>
-          <span>{{ JSON.parse(data.shop.sellPet || '[]').join('、') }}</span>
+          <span style="color: #666">游戏周边：</span>
+          <span>{{ JSON.parse(data.shop.sellVirtualGame || '[]').join('、') }}</span>
         </div>
         <div style="margin-bottom: 10px">
           <span style="color: #666">联系方式：</span>

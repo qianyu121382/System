@@ -68,7 +68,7 @@ public class TokenUtils {
             String role = userRole[1];
             if (RoleEnum.ADMIN.name().equals(role)) {
                 return staticAdminService.selectById(userId);
-            } else if (RoleEnum.PETSHOP.name().equals(role)) {
+            } else if (RoleEnum.GAMESHOP.name().equals(role)) {
                 return staticVirtualGameShopService.selectById(userId);
             } else if (RoleEnum.USER.name().equals(role)) {
                 return staticUserService.selectById(userId);

@@ -12,16 +12,12 @@
           </div>
         </div>
         <div style="margin-bottom: 10px">
-          <span style="color: #666">游戏类型：</span>
+          <span style="color: #666">游戏周边：</span>
           <span>{{ data.virtualGame.typeName }}</span>
         </div>
         <div style="margin-bottom: 10px">
           <span style="color: #666">游戏状态：</span>
           <el-tag type="success">售卖中</el-tag>
-        </div>
-        <div style="margin-bottom: 10px">
-          <span style="color: #666">游戏性别：</span>
-          <span>{{ data.virtualGame.sex }}</span>
         </div>
         <div style="margin-bottom: 10px">
           <span style="color: #666">游戏价格：</span>

@@ -45,7 +45,7 @@ public class VirtualGameShopService
         if (ObjectUtil.isEmpty(virtualGameShop.getName())) {
             virtualGameShop.setName(virtualGameShop.getUsername());
         }
-        virtualGameShop.setRole(RoleEnum.PETSHOP.name());
+        virtualGameShop.setRole(RoleEnum.GAMESHOP.name());
         virtualGameShop.setStatus("待提交");
         virtualGameShopMapper.insert(virtualGameShop);
     }
@@ -136,7 +136,7 @@ public class VirtualGameShopService
      */
     public void identify(VirtualGameShop virtualGameShop) {
         Account currentUser = TokenUtils.getCurrentUser();
-        if (RoleEnum.PETSHOP.name().equals(currentUser.getRole())) {
+        if (RoleEnum.GAMESHOP.name().equals(currentUser.getRole())) {
             // status = 待审核
             virtualGameShop.setStatus("待审核");
         }

@@ -43,21 +43,12 @@
           </div>
           <div style="margin-top: 20px">
             <div style="padding: 10px 0; font-size: 18px; color: #666666">游戏商城服务</div>
-            <div style="display: flex">
               <div style="flex: 1; padding: 10px 0">游戏咨询</div>
               <div style="flex: 1; padding: 5px 0">游戏购买</div>
-            </div>
-            <div style="display: flex">
               <div style="flex: 1; padding: 10px 0">游戏周边查看</div>
               <div style="flex: 1; padding: 5px 0">游戏周边购买</div>
-            </div>
-            <div style="display: flex">
               <div style="flex: 1; padding: 10px 0">游戏店查看</div>
-            </div>
-            <div style="display: flex">
               <div style="flex: 1; padding: 10px 0">APP下载</div>
-            </div>
-            <div style="padding: 10px 0 20px 0">友情链接：<a style="margin-left:10px;color: red;" href="https://space.bilibili.com/432113931">武哥聊编程</a> <a style="margin-left:10px;color: red" href="https://space.bilibili.com/402779077">程序员青戈</a> </div>
           </div>
         </div>
         <div style="width: 100%; text-align: center; color: #333; margin-top: 40px; font-size: 20px">
